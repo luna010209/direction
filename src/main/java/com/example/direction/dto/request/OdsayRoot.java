@@ -1,5 +1,6 @@
 package com.example.direction.dto.request;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -8,6 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 @Component
+@Getter
 public class OdsayRoot {
     @Value("${odsay.apiKey}")
     private String apiKey;

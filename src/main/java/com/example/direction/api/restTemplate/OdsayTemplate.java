@@ -1,4 +1,4 @@
-package com.example.direction.restTemplate;
+package com.example.direction.api.restTemplate;
 
 import com.example.direction.dto.request.DirectionRequest;
 import com.example.direction.dto.request.OdsayRoot;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class OdsayTemplate {
     private final OdsayRoot root;
     public Map<String, Object> directions(DirectionRequest request){
-        Map<String, Object> map = new HashMap<>();
+        Map map = new HashMap<>();
         try {
             String uriString = root.uriString("searchPubTransPathT");
             URI uri = UriComponentsBuilder.fromUriString(uriString)
@@ -32,7 +32,7 @@ public class OdsayTemplate {
             RestTemplate restTemplate = new RestTemplate();
 
             String response = restTemplate.getForObject(uri, String .class);
-            map = new ObjectMapper().readValue(response.toString(), Map.class);
+            map = new ObjectMapper().readValue(response, Map.class);
         } catch (UnsupportedEncodingException | JsonProcessingException e){
             e.getMessage();
         }

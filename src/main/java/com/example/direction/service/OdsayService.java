@@ -4,12 +4,11 @@ import com.example.direction.dto.request.DirectionRequest;
 import com.example.direction.dto.response.DirectionResponse;
 import com.example.direction.dto.response.PathResponse;
 import com.example.direction.mapper.DirectionMapper;
-import com.example.direction.restTemplate.OdsayTemplate;
+import com.example.direction.api.restTemplate.OdsayTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
