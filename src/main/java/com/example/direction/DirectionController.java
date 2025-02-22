@@ -35,4 +35,9 @@ public class DirectionController {
     public Map<String, Object> webClient(@RequestBody DirectionRequest request){
         return client.directions(request);
     }
+
+    @PostMapping("http-interface")
+    public Map<String, Object> odsayInterface(@RequestBody DirectionRequest request){
+        return service.odsayInterface(request);
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.direction.service;
 
+import com.example.direction.api.httpInterface.OdsayInterface;
 import com.example.direction.dto.request.DirectionRequest;
 import com.example.direction.dto.response.DirectionResponse;
 import com.example.direction.dto.response.PathResponse;
@@ -7,6 +8,7 @@ import com.example.direction.mapper.DirectionMapper;
 import com.example.direction.api.restTemplate.OdsayTemplate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,9 @@ import java.util.Map;
 public class OdsayService {
     private final DirectionMapper mapper;
     private final OdsayTemplate template;
+    private final OdsayInterface odsayInterface;
+    @Value("${odsay.apiKey}")
+    private String apiKey;
     public DirectionResponse test(DirectionRequest request){
         Map<String, Object> map = template.directions(request);
         for (Map<String, Object> path: (List<Map<String, Object>>) map.get("path")){
@@ -36,6 +41,13 @@ public class OdsayService {
                 .subwayBusCount((Integer) map.get("subwayBusCount"))
                 .build();
         return response;
+    }
+
+    public Map<String, Object> odsayInterface(DirectionRequest request) {
+        Map<String, Object> map = odsayInterface.getDirections(apiKey,
+                request.getSx(), request.getSy(),
+                request.getEx(), request.getEy());
+        return (Map<String, Object>) map.get("result");
     }
 
 }
