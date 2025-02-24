@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class DirectionResponse {
+    private Long id;
     private int busCount;
     private int subwayCount;
     private int subwayBusCount;
-    private Long pathId;
 }

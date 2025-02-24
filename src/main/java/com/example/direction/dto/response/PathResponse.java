@@ -8,10 +8,11 @@ import lombok.*;
 @Builder
 @ToString
 public class PathResponse {
-    private Long pathId;
+    private Long id;
     private int pathType;
     private int payment;
     private int totalTime;
     @Getter
     private String mapObj;
+    private Long directionId;
 }
