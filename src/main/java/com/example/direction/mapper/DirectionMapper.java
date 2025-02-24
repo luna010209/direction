@@ -9,5 +9,9 @@ import org.apache.ibatis.annotations.Mapper;
 public interface DirectionMapper {
     void odsayDirection(DirectionResponse direction);
     void odsayPath(PathResponse path);
-    void direction(DirectionRequest request);
+
+    DirectionResponse getDirection(Long id);
+    void updateDirection(DirectionResponse direction);
+    void deleteDirection(Long id);
+
 }
