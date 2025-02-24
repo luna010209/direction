@@ -5,20 +5,31 @@
 
 <mapper namespace="com.example.direction.mapper.DirectionMapper">
 
+    <select id="getDirection" parameterType="java.lang.Long" resultType="com.example.direction.dto.response.DirectionResponse">
+        SELECT * FROM direction_odsay WHERE id=#{id};
+    </select>
 
-    <insert id="direction">
-        INSERT INTO direction(apiKey, lang, sx, sy, ex, ey)
-        VALUES (#{apiKey}, #{lang}, #{sx}, #{sy}, #{ex}, #{ey});
-    </insert>
-
-    <insert id="odsayDirection">
-        INSERT INTO search_pub (bus_count, subway_count, subway_bus_count, path_id)
-        VALUES (#{bus_count}, #{subway_count}, #{subway_bus_count}, #{path_id});
+    <insert id="odsayDirection" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO direction_odsay (busCount, subwayCount, subwayBusCount)
+        VALUES (#{busCount}, #{subwayCount}, #{subwayBusCount});
     </insert>
 
     <insert id="odsayPath">
-        INSERT INTO path_odsay (pathType, payment, totalTime)
-        VALUES (#{pathType}, #{payment}, #{totalTime});
+        INSERT INTO path_odsay (pathType, payment, totalTime, directionId)
+        VALUES (#{pathType}, #{payment}, #{totalTime}, #{directionId});
     </insert>
+
+    <update id="updateDirection" parameterType="com.example.direction.dto.response.DirectionResponse">
+        UPDATE direction_odsay
+        SET   busCount= #{busCount}
+            , subwayCount = #{subwayCount}
+            , subwayBusCount = #{subwayBusCount}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteDirection">
+        DELETE FROM direction_odsay
+        WHERE id = #{id};
+    </delete>
 
 </mapper>
