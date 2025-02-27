@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -76,6 +77,20 @@ public class OdsayService {
             throw new CustomException(HttpStatus.BAD_REQUEST, "No exist this direction");
         mapper.deleteDirection(id);
         return true;
+    }
+
+    public List<PathResponse> getAllPath(Long directionId){
+        DirectionResponse direction = mapper.getDirection(directionId);
+        if (direction==null)
+            throw new CustomException(HttpStatus.BAD_REQUEST, "No exist direction");
+        return mapper.getAllPath(directionId);
+    }
+
+    public List<PathResponse> getCheapPath(Long directionId, Integer paymentLimit){
+        DirectionResponse direction = mapper.getDirection(directionId);
+        if (direction==null)
+            throw new CustomException(HttpStatus.BAD_REQUEST, "No exist direction");
+        return mapper.getCheapPath(directionId, paymentLimit);
     }
 
 }
