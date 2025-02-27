@@ -9,6 +9,21 @@
         SELECT * FROM direction_odsay WHERE id=#{id};
     </select>
 
+    <select id="getAllPath" parameterType="java.lang.Long" resultType="com.example.direction.dto.response.PathResponse">
+        SELECT * FROM path_odsay p WHERE p.directionId=#{directionId};
+    </select>
+
+    <select id="getCheapPath" resultType="com.example.direction.dto.response.PathResponse">
+        SELECT * FROM path_odsay p
+        WHERE p.directionId = #{directionId} AND p.payment &lt; #{paymentLimit};
+    </select>
+
+    <select id="getPathWithBus" resultType="com.example.direction.dto.response.PathResponse">
+        SELECT d.busCount
+        FROM path_odsay p JOIN direction_odsay d ON p.id=d.id
+        WHERE p.id = 1;
+    </select>
+
     <insert id="odsayDirection" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO direction_odsay (busCount, subwayCount, subwayBusCount)
         VALUES (#{busCount}, #{subwayCount}, #{subwayBusCount});
