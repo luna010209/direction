@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "20fa6224-1497-4e58-adc0-9e115e4f5815",
+		"name": "Direction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37757111"
+	},
+	"item": [
+		{
+			"name": "My-batis",
+			"item": [
+				{
+					"name": "my-batis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-batis/{direction-id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-batis/all-path/{direction-id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis/all-path/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis",
+								"all-path",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-batis/all-path/{direction-id} Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis/cheap-path/4/2000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis",
+								"cheap-path",
+								"4",
+								"2000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-batis/{direction-id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 1,\r\n    \"sx\": 126.9421099,\r\n    \"sy\": 37.5140548,\r\n    \"ex\": 126.91718597874,\r\n    \"ey\": 37.515351955675\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-batis/{direction-id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/direction/my-batis/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"direction",
+								"my-batis",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rest-template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/direction/rest-template",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"direction",
+						"rest-template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Web-client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/direction/web-client",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"direction",
+						"web-client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Http-interface",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lang\": 0,\r\n    \"sx\": 126.926493082645,\r\n    \"sy\": 37.6134436427887,\r\n    \"ex\": 127.126936754911,\r\n    \"ey\": 37.5004198786564\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/direction/http-interface",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"direction",
+						"http-interface"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
